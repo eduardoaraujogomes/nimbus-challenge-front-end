@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Dropdown from '../components/Dropdown';
+import Cards from '../components/Cards';
 import './style.scss';
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
       <h2>
         Bairro: <Dropdown selected={selected} setSelected={setSelected} />
       </h2>
+      <Cards />
     </section>
   );
 }
