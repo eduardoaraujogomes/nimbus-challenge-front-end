@@ -8,9 +8,10 @@ function Home() {
   return (
     <section className='container'>
       <h1>Previsão de Chuva - Horário</h1>
-      <h2>
-        Bairro: <Dropdown selected={selected} setSelected={setSelected} />
-      </h2>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem ' }}>
+        <p>Bairro: </p>
+        <Dropdown selected={selected} setSelected={setSelected} />
+      </div>
       <Cards />
     </section>
   );
