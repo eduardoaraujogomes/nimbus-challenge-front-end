@@ -1,0 +1,44 @@
+@import './utilities.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $background-color;
+  color: $primary-color;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  margin-top: 2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  @media (min-width: 575px) {
+    max-width: 100%;
+  }
+  @media (min-width: 767px) {
+    max-width: 540px;
+  }
+  @media (min-width: 991px) {
+    max-width: 720px;
+  }
+  @media (min-width: 1199px) {
+    max-width: 1140px;
+  }
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
+}
