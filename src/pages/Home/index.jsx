@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Dropdown from '../components/Dropdown';
 import Cards from '../components/Cards';
+import Caption from '../components/Caption';
 import './style.scss';
 
 const Home = function Home() {
@@ -13,6 +14,7 @@ const Home = function Home() {
         <Dropdown selected={selected} setSelected={setSelected} />
       </div>
       <Cards />
+      <Caption />
     </section>
   );
 };

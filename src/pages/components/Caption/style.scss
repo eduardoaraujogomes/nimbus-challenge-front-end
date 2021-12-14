@@ -1,0 +1,26 @@
+.caption-container{
+display: grid;
+grid-template-columns: 1fr;
+align-items: flex-start;
+width: auto;
+gap: 0.8rem;
+
+@media (min-width: 575px) {
+  width: 360.8px;
+}
+
+
+@media (min-width: 992px) {
+  grid-template-columns: 1fr 1fr;
+  width: auto;
+
+}
+}
+.caption-container h4 {
+  grid-column: 1;
+
+  @media (min-width: 992px) {
+    grid-column: 1/span 2;
+
+  }
+}

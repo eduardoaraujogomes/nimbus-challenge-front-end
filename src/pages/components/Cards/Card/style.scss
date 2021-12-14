@@ -1,11 +1,18 @@
 @import '../../../../utilities.scss';
 
 .card-container {
-  width: 10.625rem;
-  padding: 1rem 1rem;
+  width: 15rem;
+  align-items: center;
+  padding: 0.5rem 1rem;
   border: 1px solid $primary-color;
   border-radius: 0.8rem;
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+
+  @media (min-width: 575px) {
+      width: 10.625rem;
+      align-items: flex-start;
+
+  }
 }
