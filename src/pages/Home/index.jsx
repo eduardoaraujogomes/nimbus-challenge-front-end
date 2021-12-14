@@ -8,7 +8,7 @@ function Home() {
   return (
     <section className='container'>
       <h1>Previsão de Chuva - Horário</h1>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem ' }}>
+      <div className='container-dropdown'>
         <p>Bairro: </p>
         <Dropdown selected={selected} setSelected={setSelected} />
       </div>

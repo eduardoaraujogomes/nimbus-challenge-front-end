@@ -3,7 +3,7 @@
 .dropdown {
   width: 200px;
   user-select: none;
-  display: inline-block;
+  display: inline-block; 
   position: relative;
 
   .dropdown-btn {
@@ -18,26 +18,27 @@
 
     .dropdown-arrow {
       transform: rotate(90deg);
+      font-size: 14px;
+      font-weight: bolder;
     }
   }
 
   .dropdown-content {
     position: absolute;
-    top: 110%;
-    left: 0;
     padding: 10px;
     border-radius: 1rem;
-    background: $background-color;
+    background-color: $background-color;
     box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
     font-weight: 500;
     color: $primary-color;
+
 
     .dropdown-item {
       padding: 10px;
       cursor: pointer;
       transition: all 0.2s;
       &:hover {
-        background: #530cce;
+        background: #2a1a44;        
       }
     }
   }

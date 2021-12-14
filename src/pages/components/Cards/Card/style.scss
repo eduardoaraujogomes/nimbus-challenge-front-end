@@ -1,8 +1,11 @@
 @import '../../../../utilities.scss';
 
 .card-container {
-  width: 200px;
+  width: 10.625rem;
   padding: 1rem 1rem;
   border: 1px solid $primary-color;
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }

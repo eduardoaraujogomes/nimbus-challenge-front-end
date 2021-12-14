@@ -25,22 +25,8 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  max-width: 100%;
 
-  @media (min-width: 575px) {
-    max-width: 100%;
-  }
-  @media (min-width: 767px) {
-    max-width: 720px;
-  }
-  @media (min-width: 992px) {
-    max-width: 960px;
-  }
-  @media (min-width: 1199px) {
-    max-width: 1140px;
-  }
-  @media (min-width: 1400px) {
-    max-width: 1320px;
-  }
 }
 
 .strong-rain {

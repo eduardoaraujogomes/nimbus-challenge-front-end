@@ -2,23 +2,16 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  gap: 2rem;
+  gap: 1.3rem;
 
   @media (min-width: 575px) {
     grid-template-columns: 1fr 1fr;
-    max-width: 100%;
+
   }
-  @media (min-width: 767px) {
-    max-width: 720px;
-  }
+
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr 1fr;
-    max-width: 960px;
+
   }
-  @media (min-width: 1199px) {
-    max-width: 1140px;
-  }
-  @media (min-width: 1400px) {
-    max-width: 1320px;
-  }
+
 }
