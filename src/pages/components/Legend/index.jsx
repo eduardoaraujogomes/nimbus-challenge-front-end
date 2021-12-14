@@ -1,8 +1,8 @@
 import React from 'react';
 import './style.scss';
 
-function Legend() {
-  return <div></div>;
-}
+const Legend = function Legend() {
+  return <div />;
+};
 
 export default Legend;

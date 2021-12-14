@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 
-function Card({ date, rain }) {
+const Card = function Card({ date, rain }) {
   const [hour, severity] = [rain[0], rain[1]];
   const severityClass = {
     'Chuva Forte': 'strong-rain',
@@ -11,13 +11,16 @@ function Card({ date, rain }) {
   };
 
   return (
-    <div className='card-container'>
+    <div className="card-container">
       <p>
-        {date} - {hour}
+        {date}
+        {' '}
+        -
+        {hour}
       </p>
       <span className={severityClass[severity]}>{severity}</span>
     </div>
   );
-}
+};
 
 export default Card;

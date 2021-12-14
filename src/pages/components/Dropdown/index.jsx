@@ -1,28 +1,26 @@
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import './style.scss';
 
-function Dropdown({ selected, setSelected }) {
+const Dropdown = function Dropdown({ selected, setSelected }) {
   const [isActive, setIsActive] = useState(false);
   const [arrow, setArrow] = useState('>');
 
-  const ref = useRef()
-
-
+  const ref = useRef();
 
   useEffect(() => {
-    const  checkIfClickedOutside = (event) => {
-      if(isActive && ref.current && !ref.current.contains(event.target)){
+    const checkIfClickedOutside = (event) => {
+      if (isActive && ref.current && !ref.current.contains(event.target)) {
         setIsActive(false);
-        setArrow('>')
+        setArrow('>');
       }
-    }    
-    document.addEventListener('click', checkIfClickedOutside)
+    };
+    document.addEventListener('click', checkIfClickedOutside);
     return () => {
-      document.removeEventListener('click', checkIfClickedOutside)
-    }    
-  }, [isActive])
-  
+      document.removeEventListener('click', checkIfClickedOutside);
+    };
+  }, [isActive]);
+
   function handleClick() {
     if (isActive) {
       setIsActive(false);
@@ -33,34 +31,38 @@ function Dropdown({ selected, setSelected }) {
     }
   }
 
-
-
-
-  const options = ['Copacabana/RJ', 'Marília/SP', 'João Pesosa/PB'];
+  const options = [
+    { id: 1, city: 'Copacabana/RJ' },
+    { id: 2, city: 'Marília/SP' },
+    { id: 3, city: 'João Pesosa/PB' },
+  ];
   return (
-    <div className='dropdown' ref={ref} >
-      <div className='dropdown-btn' onClick={handleClick}>
+    <div className="dropdown" ref={ref}>
+      <div className="dropdown-btn" onClick={handleClick} aria-hidden="true">
         {selected}
-        <span className='dropdown-arrow'>{arrow}</span>
+        <span className="dropdown-arrow">{arrow}</span>
       </div>
       {isActive && (
-        <div className='dropdown-content'>
-          {options.map((option, idx) => (
-            <div key={idx}
+        <div className="dropdown-content">
+          {options.map(({ id, city }) => (
+
+            <div
+              key={id}
               onClick={() => {
-                setSelected(option);
+                setSelected(city);
                 setIsActive(false);
-                setArrow('>');                
+                setArrow('>');
               }}
-              className='dropdown-item'
+              aria-hidden="true"
+              className="dropdown-item"
             >
-              {option}
+              {city}
             </div>
           ))}
         </div>
       )}
     </div>
   );
-}
+};
 
 export default Dropdown;
