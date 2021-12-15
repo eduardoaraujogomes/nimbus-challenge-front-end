@@ -1,6 +1,7 @@
 .caption-container{
 display: grid;
 grid-template-columns: 1fr;
+margin-top: -1rem;
 align-items: flex-start;
 width: auto;
 gap: 0.8rem;
@@ -13,6 +14,7 @@ gap: 0.8rem;
 @media (min-width: 992px) {
   grid-template-columns: 1fr 1fr;
   width: auto;
+  margin-right: 3rem;
 
 }
 }

@@ -9,7 +9,6 @@ module.exports = {
     'plugin:react/all',
     'eslint:all',
     'airbnb',
-    'plugin:import/errors',
     'plugin:jsx-a11y/recommended',
   ],
   parserOptions: {
