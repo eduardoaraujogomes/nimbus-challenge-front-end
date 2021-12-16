@@ -29,7 +29,7 @@ const Home = function Home() {
         <Dropdown selected={selected} setSelected={setSelected} forecasts={forecasts} />
       </div>
       <Cards forecasts={forecasts} selected={selected} />
-      <Caption />
+      {selected !== 'Selecione um Bairro' && <Caption />}
     </section>
   );
 };
