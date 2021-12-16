@@ -1,22 +1,31 @@
 /* eslint-disable react/no-array-index-key */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import './style.scss';
 
-const Cards = function Cards() {
-  const rain = [
-    ['13h', 'Chuva Forte'],
-    ['14h', 'Chuva Moderada'],
-    ['15h', 'Chuva Fraca'],
-    ['16h', 'Chuva Fraca'],
-    ['17h', 'Chuva Moderada'],
-    ['18h', 'Chuva Forte'],
-    ['19h', 'Sem Chuva'],
-  ];
+const Cards = function Cards({ forecasts, selected }) {
+  const [dateList, setDateList] = useState([]);
+
+  function getSelectedNeighbourhood() {
+    const filtered = forecasts.filter((element) => element.neighbourhood === selected);
+
+    setDateList(filtered[0]?.forecast);
+  }
+
+  useEffect(() => getSelectedNeighbourhood(), [selected]);
 
   return (
     <div className="cards-container">
-      {rain.map((hourAndSeverity, idx) => <Card date="08/12" rain={hourAndSeverity} key={idx} />)}
+      {!!dateList && dateList.map(
+        ({ day, hour, millimeters }, id) => (
+          <Card
+            day={day}
+            hour={hour}
+            millimeters={millimeters}
+            key={id}
+          />
+        ),
+      )}
     </div>
   );
 };

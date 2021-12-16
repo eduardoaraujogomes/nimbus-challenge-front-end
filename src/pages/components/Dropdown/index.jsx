@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 
 import './style.scss';
 
-const Dropdown = function Dropdown({ selected, setSelected }) {
+const Dropdown = function Dropdown({ selected, setSelected, forecasts }) {
   const [isActive, setIsActive] = useState(false);
   const [arrow, setArrow] = useState('>');
 
@@ -31,11 +31,6 @@ const Dropdown = function Dropdown({ selected, setSelected }) {
     }
   }
 
-  const options = [
-    { id: 1, city: 'Copacabana/RJ' },
-    { id: 2, city: 'Marília/SP' },
-    { id: 3, city: 'João Pesosa/PB' },
-  ];
   return (
     <div className="dropdown" ref={ref}>
       <div className="dropdown-btn" onClick={handleClick} aria-hidden="true">
@@ -44,19 +39,19 @@ const Dropdown = function Dropdown({ selected, setSelected }) {
       </div>
       {isActive && (
         <div className="dropdown-content">
-          {options.map(({ id, city }) => (
+          {!!forecasts && forecasts.map(({ id, neighbourhood }) => (
 
             <div
               key={id}
               onClick={() => {
-                setSelected(city);
+                setSelected(neighbourhood);
                 setIsActive(false);
                 setArrow('>');
               }}
               aria-hidden="true"
               className="dropdown-item"
             >
-              {city}
+              {neighbourhood}
             </div>
           ))}
         </div>

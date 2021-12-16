@@ -1,8 +1,14 @@
 import React from 'react';
 import './style.scss';
 
-const Card = function Card({ date, rain }) {
-  const [hour, severity] = [rain[0], rain[1]];
+const Card = function Card({ day, hour, millimeters }) {
+  function checkRainSeverity() {
+    if (millimeters < 0.2) return 'Sem Chuva';
+    if (millimeters >= 0.2 && millimeters <= 5.0) return 'Chuva Fraca';
+    if (millimeters >= 5.1 && millimeters <= 25.0) return 'Chuva Moderada';
+    return 'Chuva Forte';
+  }
+
   const severityClass = {
     'Chuva Forte': 'strong-rain',
     'Chuva Moderada': 'moderate-rain',
@@ -13,12 +19,14 @@ const Card = function Card({ date, rain }) {
   return (
     <div className="card-container">
       <p>
-        {date}
+        {day}
         {' '}
         -
         {hour}
       </p>
-      <span className={severityClass[severity]}>{severity}</span>
+      <span className={severityClass[checkRainSeverity()]}>
+        {checkRainSeverity()}
+      </span>
     </div>
   );
 };
