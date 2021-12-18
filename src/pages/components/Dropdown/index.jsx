@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 
 import './style.scss';
 
-const Dropdown = function Dropdown({ selected, setSelected, forecasts }) {
+const Dropdown = function Dropdown({ selected, setSelected, locations }) {
   const [isActive, setIsActive] = useState(false);
   const [arrow, setArrow] = useState('>');
 
@@ -39,7 +39,7 @@ const Dropdown = function Dropdown({ selected, setSelected, forecasts }) {
       </div>
       {isActive && (
         <div className="dropdown-content">
-          {!!forecasts && forecasts.map(({ id, neighbourhood }) => (
+          {!!locations && locations.map(({ id, neighbourhood, state }) => (
 
             <div
               key={id}
@@ -51,7 +51,7 @@ const Dropdown = function Dropdown({ selected, setSelected, forecasts }) {
               aria-hidden="true"
               className="dropdown-item"
             >
-              {neighbourhood}
+              {`${neighbourhood}/${state}`}
             </div>
           ))}
         </div>

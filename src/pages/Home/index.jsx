@@ -7,6 +7,7 @@ import './style.scss';
 
 const Home = function Home() {
   const [selected, setSelected] = useState('Selecione um Bairro');
+  const [locations, setLocations] = useState([]);
   const [forecasts, setForecasts] = useState([]);
 
   const getForecasts = async () => {
@@ -19,14 +20,27 @@ const Home = function Home() {
     }
   };
 
-  useEffect(() => getForecasts(), []);
+  const getLocations = async () => {
+    getForecasts();
+    try {
+      const response = await api.get('/locations');
+
+      setLocations([...response.data]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getLocations();
+  }, []);
 
   return (
     <section className="container">
       <h1>Previsão de Chuva - Horário</h1>
       <div className="container-dropdown">
         <p>Bairro: </p>
-        <Dropdown selected={selected} setSelected={setSelected} forecasts={forecasts} />
+        <Dropdown selected={selected} setSelected={setSelected} locations={locations} />
       </div>
       <Cards forecasts={forecasts} selected={selected} />
       {selected !== 'Selecione um Bairro' && <Caption />}

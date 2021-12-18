@@ -8,8 +8,7 @@ const Cards = function Cards({ forecasts, selected }) {
 
   function getSelectedNeighbourhood() {
     const filtered = forecasts.filter((element) => element.neighbourhood === selected);
-
-    setDateList(filtered[0]?.forecast);
+    setDateList(filtered);
   }
 
   useEffect(() => getSelectedNeighbourhood(), [selected]);
