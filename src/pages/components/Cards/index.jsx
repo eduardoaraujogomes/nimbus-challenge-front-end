@@ -7,7 +7,7 @@ const Cards = function Cards({ forecasts, selected }) {
   const [dateList, setDateList] = useState([]);
 
   function getSelectedNeighbourhood() {
-    const filtered = forecasts.filter((element) => element.neighbourhood === selected);
+    const filtered = forecasts.filter((element) => element.neighbourhood === selected.split('/')[0]);
     setDateList(filtered);
   }
 

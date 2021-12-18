@@ -44,7 +44,7 @@ const Dropdown = function Dropdown({ selected, setSelected, locations }) {
             <div
               key={id}
               onClick={() => {
-                setSelected(neighbourhood);
+                setSelected(`${neighbourhood}/${state}`);
                 setIsActive(false);
                 setArrow('>');
               }}
