@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 import Dropdown from '../components/Dropdown';
 import Cards from '../components/Cards';
 import Caption from '../components/Caption';
@@ -16,7 +17,11 @@ const Home = function Home() {
 
       setForecasts([...response.data]);
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        title: 'Oops',
+        icon: 'error',
+        text: 'erro no servidor.',
+      });
     }
   };
 
@@ -27,7 +32,11 @@ const Home = function Home() {
 
       setLocations([...response.data]);
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        title: 'Oops',
+        icon: 'error',
+        text: 'erro no servidor.',
+      });
     }
   };
 
