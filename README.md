@@ -53,6 +53,7 @@ As seguintes ferramentas foram usadas na construção do Front-end:
  - [eslint]
  - [editorconfig]
  - [Axios]
+ - [Vercel]
 
 - Programado no [Visual Studio Code].
 
@@ -114,5 +115,6 @@ Feito com 💙 por **Eduardo de Araújo** 👻.
 [eslint]: https://eslint.org/
 [editorconfig]: https://editorconfig.org/
 [sweetalert2]: https://sweetalert2.github.io/
+[Vercel]: https://vercel.com
 
 [Visual Studio Code]: https://code.visualstudio.com/ 
