@@ -45,15 +45,21 @@ const Home = function Home() {
   }, []);
 
   return (
+
     <section className="container">
       <h1>Previsão de Chuva - Horário</h1>
-      <div className="container-dropdown">
-        <p>Bairro: </p>
-        <Dropdown selected={selected} setSelected={setSelected} locations={locations} />
-      </div>
-      <Cards forecasts={forecasts} selected={selected} />
-      {selected !== 'Selecione um Bairro' && <Caption />}
+      {!!forecasts && (
+        <>
+          <div className="container-dropdown">
+            <p>Bairro: </p>
+            <Dropdown selected={selected} setSelected={setSelected} locations={locations} />
+          </div>
+          <Cards forecasts={forecasts} selected={selected} />
+          {selected !== 'Selecione um Bairro' && <Caption />}
+        </>
+      )}
     </section>
+
   );
 };
 
